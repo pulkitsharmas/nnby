@@ -76,12 +76,12 @@ function MapViewModel() {
         return ko.utils.arrayFilter(self.viewList(), function(loc) {
             if(loc.name.toLowerCase().indexOf(filterVal)>=0) {
             	loc.visible = true;
-		return true;
-	    }
-            else{
+            	return true;
+            } else {
             	loc.visible = false;
-		return false;
-    	    });
+            	return false;
+            }
+    	});
    	}, self);
 
 	self.filter.subscribe(function() {
