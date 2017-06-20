@@ -93,7 +93,7 @@ function MapViewModel() {
 	// Showing the infoWindow for the locations
 	var last;
 	self.showInfoWindow = function(venue) {
-		if(window.innerWidth < 768) {
+		if(window.innerWidth < 768 && isNavOpen()) {
 			$(".navbar-brand").click();
 		}
 		if(last)
