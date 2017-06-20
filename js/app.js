@@ -107,16 +107,16 @@ function MapViewModel() {
    			last.setAnimation(null);
 		});
 	};
-};
+}
 
 // Loading the map by setting the applications KO bindings
 
 function initMap() {
 	ko.applyBindings(new MapViewModel());
-};
+}
 
 // In case google's status is not OK
 
 function onError() {
 	document.body.innerHTML	= "<h4>Failed to load google maps.</h4>";
-};
+}
