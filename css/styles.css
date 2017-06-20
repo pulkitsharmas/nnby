@@ -6,9 +6,14 @@ html,body {
         margin: 0;
     }
 
-.yo{
+.yo {
 	height: auto;
+}
 
+#error-text {
+	display: none;
+	font-size: 40px;
+	font-weight: 300;
 }
 #map {
     height: 100%;

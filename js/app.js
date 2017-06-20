@@ -58,18 +58,18 @@ function MapViewModel() {
 				myvenue.lng = response.response.groups[i].items[j].venue.location.lng;
 				myvenue.address = response.response.groups[i].items[j].venue.location.formattedAddress;			
 				myvenue.visible = true;
-				self.locationList.push(new self.location(myvenue));
+				self.viewList.push(new self.location(myvenue));
 			}
 		}
 	}).fail(function(e) {
-		console.log("--Error--");
-		console.log(e);
+		$("#filter-text").disabled = true;
+		self.viewList.push({name:"Unable To Load Data"});
 	});
 
 	// filtering through the list
 
 	self.filter = ko.observable("");
-	self.viewList = ko.observableArray(self.locationList);
+	self.viewList = ko.observableArray();
 
 	self.filteredItems = ko.computed(function() {
     	var filterVal = self.filter().toLowerCase();
@@ -121,5 +121,5 @@ function initMap() {
 // In case google's status is not OK
 
 function onError() {
-	document.body.innerHTML	= "<h4>Failed to load google maps.</h4>";
+	$("#error-text").css("display","block");	
 }
