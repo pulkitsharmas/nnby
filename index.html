@@ -21,16 +21,16 @@
 		</nav>
 		<div id="error-text">Failed To load Maps!</div>
 		<!-- The List contained in a side bar -->
-		<div class="sidebar">
+		<aside class="sidebar">
 				<input id="filter-text" type="search" class="form-control" name="hello" placeholder="Filter" data-bind="value: filter, valueUpdate: 'keyup'" autocomplete="off">
 			<ul class="sidebar-ul" data-bind="foreach: filteredItems">
 				<li><div class="card" data-bind="click: $parent.showInfoWindow"><p data-bind="text: name"></p></div></li>
 			</ul>
 			
-		</div>
+		</aside>
 
 		<!-- the map here -->
-		<div id="map"></div>
+		<main id="map"></main>
 
 		<!-- loading required scripts -->
 		
