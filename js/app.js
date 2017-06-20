@@ -83,7 +83,7 @@ function MapViewModel() {
 
 	self.filter.subscribe(function() {
 		for(var x = 0; x < self.viewList().length; x++) {
-			if(self.viewList()[x].visible == false)
+			if(self.viewList()[x].visible === false)
 				self.viewList()[x].marker.setVisible(false);
 			else
 				self.viewList()[x].marker.setVisible(true);
