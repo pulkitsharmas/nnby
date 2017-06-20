@@ -74,11 +74,14 @@ function MapViewModel() {
 	self.filteredItems = ko.computed(function() {
     	var filterVal = self.filter().toLowerCase();
         return ko.utils.arrayFilter(self.viewList(), function(loc) {
-            if(loc.name.toLowerCase().indexOf(filterVal)>=0)
-            	return loc.visible = true;
-            else
-            	return loc.visible = false;
-    	   	});
+            if(loc.name.toLowerCase().indexOf(filterVal)>=0) {
+            	loc.visible = true;
+		return true;
+	    }
+            else{
+            	loc.visible = false;
+		return false;
+    	    });
    	}, self);
 
 	self.filter.subscribe(function() {
